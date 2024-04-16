@@ -18,7 +18,7 @@ Developer, Base, Bug Fixes, Modules
 
   
 <p align="center">
-  <a href="https://github.com/ahmadzakiyox"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/ahmadzakiyox"><img title="Author" src="https://img.shields.io/badge/Author-ahmadzakiyox-orange.svg?style=for-the-badge&logo=github" /></a>
 
 <p align="center">
   <a href="https://github.com/ahmadzakiyox/nuxbot#requirements">Requirements</a> •
