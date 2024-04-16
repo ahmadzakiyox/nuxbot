@@ -96,6 +96,3 @@ npm start
 # Thanks to
 * [`Allah SWT`]()
 * [`TELEGRAF`](https://github.com/telegraf/telegraf)
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot?ref=badge_large)
