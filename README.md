@@ -38,8 +38,14 @@ Edit the required value in `config.js`.
 // TOKEN BOT TELEGRAM
 global.token = ["BOT_TOKEN"]
 
+// BOTNAME
+global.botname = 'BOT_NAME'
+
 //APIKEY XCODERS
 global.xcoders = 'YOUR_APIKEY'
+
+//MONGODBURL 
+global.MONGODB_URI = 'YOUR_URL'
 
 //APIKET RSNCHAT 
 global.rsnchat = 'YOUR_APIKEY'
