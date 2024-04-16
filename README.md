@@ -29,6 +29,9 @@ Developer, Base, Bug Fixes, Modules
 ## `Deploy`
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ahmadzakiyox/nuxbot)
 
+## `Deploy`
+[![Deploy](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Nuxysaibot)
+
 ## `SETTINGS`
 
 ## ✍️ Editing the file
