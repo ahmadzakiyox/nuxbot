@@ -21,7 +21,6 @@ global.rsnchat = 'YOUR_APIKEY'
 global.owner = 'YOUR_USERNAME_TELEGRAM'
 }
 
-
 global.wait = '⏳ Mohon tunggu sebentar'
 
 let file = require.resolve(__filename)
