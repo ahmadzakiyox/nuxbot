@@ -21,10 +21,8 @@ Developer, Base, Bug Fixes, Modules
   <a href="https://github.com/ahmadzakiyox"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
 
 <p align="center">
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#requirements">Requirements</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#instalasi">Installation</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#features">Features</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#thanks-to">Thanks to</a>
+  <a href="https://github.com/ahmadzakiyox/nuxbot#requirements">Requirements</a> •
+  <a href="https://github.com/ahmadzakiyox/nuxbot#instalasi">Installation</a> •
 </p>
 </div>
 
