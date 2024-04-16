@@ -11,14 +11,14 @@
 ## Developers
   <div align="center">
     
-  [![Toxic-Turbo](https://telegra.ph/file/7128e35f7ec02356b8039.jpg)](https://github.com/ahmadzakiyox)
+  [![Ahmadzaki](https://telegra.ph/file/7128e35f7ec02356b8039.jpg)](https://github.com/ahmadzakiyox)
 
-[Toxic-Turbo](https://github.com/ahmadzakiyox)        
+[Ahmadzaki](https://github.com/ahmadzakiyox)        
 Developer, Base, Bug Fixes, Modules
 
   
 <p align="center">
-  <a href="https://github.com/TURBOHYPER"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/ahmadzakiyox"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
 
 <p align="center">
   <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#requirements">Requirements</a> •
