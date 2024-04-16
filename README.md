@@ -58,35 +58,6 @@ global.owner = 'YOUR_USERNAME_TELEGRAM'
 `XCODERS`: XCODERS API key. You can get it [here](https://xcoders-api.onrender.com) by creating an account.   
 `RSNCHAT`: Rsnchat API key. You can get it [here](https://discord.gg/r5QWdKfQxr) Join discord server and create account with /new slash command and get your apikey with /key slash command for free!  
 
-𝗕𝘂𝗶𝗹𝗱𝗽𝗮𝗰𝗸𝘀
-
-heroku/nodejs
-
-https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
-
-https://github.com/DuckyTeam/heroku-buildpack-imagemagick
-
-## Developers
-  <div align="center">
-    
-  [![Toxic-Turbo](https://github.com/TURBOHYPER.png?size=100)](https://github.com/TURBOHYPER)
-
-[Toxic-Turbo](https://github.com/TURBOHYPER)        
-Developer, Base, Bug Fixes, Modules
-
-  
-<p align="center">
-  <a href="https://github.com/TURBOHYPER"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
-
-<p align="center">
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#requirements">Requirements</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#instalasi">Installation</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#features">Features</a> •
-  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#thanks-to">Thanks to</a>
-</p>
-</div>
-
-
 ---
 
 
@@ -94,8 +65,6 @@ Developer, Base, Bug Fixes, Modules
 # Requirements
 * [Node.js](https://nodejs.org/en/)
 * [Git](https://git-scm.com/downloads)
-* [FFmpeg](https://github.com/BtbN/FFmpeg-Builds/releases) (for sticker command)
-* [Libwebp](https://developers.google.com/speed/webp/download) (for sticker wm)
 * Any text editor
 
 # Installation
