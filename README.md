@@ -58,13 +58,6 @@ global.owner = 'YOUR_USERNAME_TELEGRAM'
 `XCODERS`: XCODERS API key. You can get it [here](https://xcoders-api.onrender.com) by creating an account.   
 `RSNCHAT`: Rsnchat API key. You can get it [here](https://discord.gg/r5QWdKfQxr) Join discord server and create account with /new slash command and get your apikey with /key slash command for free!  
 
-`authorStick`: name of the author sticker pack.   
-`packStick`: name of the sticker pack.   
-- CHANGE OWNER NUMBER [Here](https://github.com/TURBOHYPER/Toxic-Alexa_V2/blob/master/settings.json)
-- CHANGE OWNER NAME [Here](https://github.com/TURBOHYPER/Toxic-Alexa_V2/blob/master/settings.json)
-- CHANGE BOT NAME [Here](https://github.com/TURBOHYPER/Toxic-Alexa_V2/blob/master/settings.json)
-
-    
 𝗕𝘂𝗶𝗹𝗱𝗽𝗮𝗰𝗸𝘀
 
 heroku/nodejs
