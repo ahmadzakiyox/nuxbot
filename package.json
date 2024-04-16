@@ -1,0 +1,50 @@
+{
+  "name": "ca",
+  "version": "1.0.0",
+  "description": "Bot Telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "Bot",
+    "Telegram",
+    "Telegraf",
+    "Ai"
+  ],
+  "author": "Ahmadzakime",
+  "license": "ISC",
+  "dependencies": {
+    "@bochilteam/scraper": "^4.2.4",
+    "@danitech/scraper": "^1.0.7",
+    "@digitalservices/twofactor-auth": "^1.0.5",
+    "ardy-api": "^1.4.0",
+    "async": "^3.2.5",
+    "axios": "^1.6.7",
+    "cfonts": "^3.2.0",
+    "dotenv": "^16.4.5",
+    "download": "^8.0.0",
+    "figlet": "^1.7.0",
+    "form-data": "^4.0.0",
+    "hercai": "^12.2.0",
+    "imgbb-uploader": "^1.5.1",
+    "jimp": "^0.22.12",
+    "jsdom": "^24.0.0",
+    "lolcatjs": "^2.4.3",
+    "moment-timezone": "^0.5.45",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1",
+    "nayan-server": "^2.2.7",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^3.1.0",
+    "otplib": "^12.0.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "rsnchat": "^3.0.9",
+    "stripe": "^14.16.0",
+    "telefile": "^0.1.1",
+    "telegraf": "^4.15.3",
+    "telegraph-uploader": "^2.0.0",
+    "xzons-api": "^0.2.4"
+  }
+}
