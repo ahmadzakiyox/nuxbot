@@ -11,7 +11,7 @@
 ## Developers
   <div align="center">
     
-  [![Toxic-Turbo](https://telegra.ph/file/2dfe530e113fcd823d185.jpg)](https://github.com/ahmadzakiyox)
+  [![Toxic-Turbo](https://telegra.ph/file/7128e35f7ec02356b8039.jpg)](https://github.com/ahmadzakiyox)
 
 [Toxic-Turbo](https://github.com/ahmadzakiyox)        
 Developer, Base, Bug Fixes, Modules
