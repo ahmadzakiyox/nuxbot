@@ -28,6 +28,7 @@ Developer, Base, Bug Fixes, Modules
 
 ## `Deploy`
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ahmadzakiyox/nuxbot)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot?ref=badge_shield)
 
 ## `Testing Bot Telegram`
 [![Deploy](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Nuxysaibot)
@@ -96,3 +97,7 @@ npm start
 # Thanks to
 * [`Allah SWT`]()
 * [`TELEGRAF`](https://github.com/telegraf/telegraf)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot?ref=badge_large)
