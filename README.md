@@ -1,7 +1,7 @@
 <div align="center">
 <img src="https://telegra.ph/file/2dfe530e113fcd823d185.jpg" alt="NUXBOT-Telegram⁩" width="500" />
 
-#  ꪶ͢Toxic-Alexaꫂ⁩⁴⁰⁴
+#  NUXBOT-Telegram
 </div>
 <p align="center">
   <a href="https://instagram.com/toxic_turbo777"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/> 
