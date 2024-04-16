@@ -97,11 +97,5 @@ npm start
 * [`Allah SWT`]()
 * [`TELEGRAF`](https://github.com/telegraf/telegraf)
 
-# License
-**Nuxys-Bot** © [Ahmadzakiyox](https://github.com/ahmadzakiyox), released under the MIT License.
-Authored and maintained by ahmadzakiyox.
-
-
-<div align="center">
-  <a href="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large&issueType=license"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large&issueType=license" />
-</div>
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot?ref=badge_large)
