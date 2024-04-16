@@ -99,7 +99,7 @@ npm start
 
 # License
 **Nuxys-Bot** © [Ahmadzakiyox](https://github.com/ahmadzakiyox), released under the MIT License.
-Authored and maintained by SlavyanDesu.
+Authored and maintained by ahmadzakiyox.
 
 
 <div align="center">
