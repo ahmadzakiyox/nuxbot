@@ -103,5 +103,5 @@ Authored and maintained by ahmadzakiyox.
 
 
 <div align="center">
-  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot?ref=badge_large"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large&issueType=license" />
+  <a href="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large&issueType=license"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fahmadzakiyox%2Fnuxbot.svg?type=large&issueType=license" />
 </div>
