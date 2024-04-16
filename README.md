@@ -70,8 +70,8 @@ global.owner = 'YOUR_USERNAME_TELEGRAM'
 # Installation
 ## For Windows
 ```bash
-git clone https://github.com/TURBOHYPER/Toxic-Alexa_V2
-cd Toxic-Alexa_V2
+git clone https://github.com/ahmadzakiyox/nuxbot
+cd nuxbot
 npm install
 node index.js
 ```
@@ -80,15 +80,14 @@ node index.js
 apt update && apt upgrade
 pkg update && pkg upgrade
 pkg install git
-git clone https://github.com/TURBOHYPER/Toxic-Alexa_V2
+git clone https://github.com/ahmadzakiyox/nuxbot
 ls
-cd Toxic-Alexa_V2
-npm i -g npm@6.14.14
+cd nuxbot
+npm i -g npm@latest
 npm install
 npm audit
 npm audit fix
 npm start
 ```
 
-# Features
-- [Features](https://github.com/TURBOHYPER/Toxic-Alexa_V2/blob/master/Bosco.js)
+
