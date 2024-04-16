@@ -8,16 +8,28 @@
   <a href="https://wa.me/6283124958295"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 </p>
 
-## `SCAN QR`
+## Developers
+  <div align="center">
+    
+  [![Toxic-Turbo](https://telegra.ph/file/2dfe530e113fcd823d185.jpg)](https://github.com/ahmadzakiyox)
 
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@TURBOHYPER/Toxic-AlexaV2?v=1)
+[Toxic-Turbo](https://github.com/ahmadzakiyox)        
+Developer, Base, Bug Fixes, Modules
+
+  
+<p align="center">
+  <a href="https://github.com/TURBOHYPER"><img title="Author" src="https://img.shields.io/badge/Author-TURBOHYPER-orange.svg?style=for-the-badge&logo=github" /></a>
+
+<p align="center">
+  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#requirements">Requirements</a> •
+  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#instalasi">Installation</a> •
+  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#features">Features</a> •
+  <a href="https://github.com/TURBOHYPER/Toxic-Alexa_V2#thanks-to">Thanks to</a>
+</p>
+</div>
 
 ## `Deploy`
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TURBOHYPER/Toxic-Alexa_V2)
-
- ## `CHANGE SESSION`
-
-[`Click Here`](https://github.com/TURBOHYPER/Toxic-Alexa_V2/blob/master/QRnya.json)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ahmadzakiyox/nuxbot)
 
 ## `SETTINGS`
 
