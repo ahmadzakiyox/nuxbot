@@ -91,4 +91,5 @@ npm start
 ```
 
 # Thanks to
+* [`Allah SWT`]()
 * [`TELEGRAF`](https://github.com/telegraf/telegraf)
