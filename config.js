@@ -1,26 +1,22 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-{
 // TOKEN BOT TELEGRAM
-global.token = ["BOT_TOKEN"]
-
+global.token = ["6136209053:AAE2nhENFUk9eLkXQp8X1Qg17XoDTMq1Lvo"]
 // BOTNAME
-global.botname = 'BOT_NAME'
+global.botname = 'HLXEVO'
 
 //APIKEY XCODERS
-global.xcoders = 'YOUR_APIKEY'
-
-//MONGODBURL 
-global.MONGODB_URI = 'YOUR_URL'
+global.xcoders = 'MoPCbxiToSFepcB'
 
 //APIKET RSNCHAT 
-global.rsnchat = 'YOUR_APIKEY'
+global.rsnchat = 'rsnai_w3Fdj3wh0SrRs118UsBkjSRN'
+
+//MONGODBURL 
+global.MONGODB_URI = 'mongodb+srv://nuxysapi:lelang18@cluster0.cmvqrmm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 //OTHER 
-global.owner = 'YOUR_USERNAME_TELEGRAM'
-}
-
+global.owner = 'ahmadzakiyo'
 global.wait = '⏳ Mohon tunggu sebentar'
 
 let file = require.resolve(__filename)
