@@ -4,7 +4,8 @@
   "description": "Bot Telegram",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "node run.js"
   },
   "keywords": [
     "Bot",
