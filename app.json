@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Sample",
+  "name": "Nuxys-BOT Telegram",
   "description": "A barebones Node.js app using Express",
   "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://node-js-sample-1234567890ab.herokuapp.com/node.png",
+  "logo": "https://telegra.ph/file/2dfe530e113fcd823d185.jpg",
   "keywords": ["node", "express", "static"]
 }
