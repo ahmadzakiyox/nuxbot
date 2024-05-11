@@ -1123,6 +1123,16 @@ bot.command('cekprem', async (ctx) => {
   }
 });
 bot.command('passgen', (ctx) => {
+  function generateRandomPassword() {
+  const length = 12; // Panjang kata sandi
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // Karakter yang digunakan
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
+  }
+  return password;
+}
   const password = generateRandomPassword();
   ctx.reply(`${password}`, { reply_to_message_id: ctx.message.message_id });
 });
