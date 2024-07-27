@@ -3,8 +3,12 @@ const chalk = require('chalk')
 
 // TOKEN BOT TELEGRAM
 global.token = ["6136209053:AAE2nhENFUk9eLkXQp8X1Qg17XoDTMq1Lvo"]
+
 // BOTNAME
 global.botname = 'HLXEVO'
+
+// DIGITAL OCEAN API FOR CONTROLER
+global.doapi = 'YOUR DO API'
 
 //APIKEY XCODERS
 global.xcoders = 'MoPCbxiToSFepcB'
