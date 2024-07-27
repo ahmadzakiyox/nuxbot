@@ -32,6 +32,20 @@ const {
 
 const filesDirectory = './img/';
 let premiumUsers = {};
+let userSelections = {};
+
+// Helper function to make requests to DigitalOcean API
+const doRequest = (method, endpoint, data = {}) => {
+  return axios({
+    method,
+    url: `${digitalOceanApiUrl}${endpoint}`,
+    headers: {
+      'Authorization': `Bearer ${digitalOceanToken}`,
+      'Content-Type': 'application/json',
+    },
+    data,
+  });
+};
 
 //=============Database=============// 
 // Koneksi ke database MongoDB
@@ -142,6 +156,12 @@ bot.command('menu', async (ctx) => {
 ├ /kenonwa 「 +62xxxxxxxx 」「 Premium 」
 ├ /cekprem「 username 」
 ├ /bin 「 Number 」 
+╰❒ 
+
+╭─❒ 「  Digitalocean Control 」 
+├ /createvm 
+├ /listvm
+├ /profile
 ╰❒ 
 
 ╭─❒ 「  Random 」 
@@ -1165,6 +1185,270 @@ bot.command('daftargiveaway', (ctx) => {
     // Reply to non-members
     ctx.reply('𝙈𝙖𝙖𝙛, 𝙥𝙚𝙧𝙞𝙣𝙩𝙖𝙝 𝙞𝙣𝙞 𝙝𝙖𝙣𝙮𝙖 𝙗𝙞𝙨𝙖 𝙙𝙞𝙜𝙪𝙣𝙖𝙠𝙖𝙣 𝙤𝙡𝙚𝙝 𝙖𝙣𝙜𝙜𝙤𝙩𝙖 𝙜𝙧𝙤𝙪𝙥 t.me/jualbeligithub', { reply_to_message_id: ctx.message.message_id });
   }
+});
+
+bot.command('/createvmn', async (ctx) => {
+  try {
+      const sizes = (await doRequest('get', '/sizes')).data.sizes;
+      const images = (await doRequest('get', '/images?type=distribution')).data.images;
+      const regions = (await doRequest('get', '/regions')).data.regions;
+
+      userSelections[ctx.from.id] = {};
+
+      const sizeButtons = sizes.map(size => [Markup.button.callback(`${size.slug} (${size.memory / 1024}GB RAM, ${size.vcpus} vCPU)`, `size_${size.slug}`)]);
+      ctx.reply('Pilih ukuran VM:', Markup.inlineKeyboard(sizeButtons));
+
+      bot.action(/size_(.+)/, (ctx) => {
+          const size = ctx.match[1];
+          userSelections[ctx.from.id].size = size;
+
+          const osButtons = images.map(image => [Markup.button.callback(`${image.distribution} ${image.name}`, `os_${image.slug}`)]);
+          ctx.reply('Pilih OS:', Markup.inlineKeyboard(osButtons));
+          ctx.answerCbQuery();
+      });
+
+      bot.action(/os_(.+)/, (ctx) => {
+          const os = ctx.match[1];
+          userSelections[ctx.from.id].os = os;
+
+          const regionButtons = regions.map(region => [Markup.button.callback(`${region.name}`, `region_${region.slug}`)]);
+          ctx.reply('Pilih region:', Markup.inlineKeyboard(regionButtons));
+          ctx.answerCbQuery();
+      });
+
+      bot.action(/region_(.+)/, (ctx) => {
+          const region = ctx.match[1];
+          userSelections[ctx.from.id].region = region;
+
+          ctx.reply('Masukkan nama VM:');
+          ctx.answerCbQuery();
+      });
+
+  } catch (error) {
+      ctx.reply('Error retrieving options.');
+      console.error(error);
+  }
+});
+// Command to check user profile
+bot.command('profile', async (ctx) => {
+try {
+  // Fetch account details
+  const accountResponse = await doRequest('get', '/account');
+  const account = accountResponse.data.account;
+
+  // Fetch balance details
+  const balanceResponse = await doRequest('get', '/customers/my/balance');
+  const balance = balanceResponse.data.month_to_date_balance;
+
+  // Fetch droplets details
+  const dropletsResponse = await doRequest('get', '/droplets');
+  const droplets = dropletsResponse.data.droplets;
+
+  const profileInfo = `
+👤 Name: ${account.name}\n📧 Email: ${account.email}\n💧 Droplet Limit: ${account.droplet_limit}\n🖥️ Droplets:
+${droplets.map(droplet => `  - ${droplet.name} (ID: ${droplet.id}, IP: ${droplet.networks.v4[0].ip_address})`).join('\n')}\n💰Free Trial Credit: $${balance}
+`;
+
+  ctx.reply(profileInfo);
+} catch (error) {
+  ctx.reply('Error fetching account details.');
+  console.error(error);
+}
+});
+
+// Command to list all VMs
+bot.command('listvm', (ctx) => {
+listVMs(ctx);
+});
+
+// Command to create a VM
+bot.command('createvm', (ctx) => {
+userSelections[ctx.from.id] = {};
+ctx.reply('Silakan pilih Spek VM yang ingin di buat:', Markup.inlineKeyboard([
+  [Markup.button.callback('🖥 1 vCPU, 1 GB', 'size_s-1vcpu-1gb')],
+  [Markup.button.callback('🖥 2 vCPU, 2 GB', 'size_s-2vcpu-2gb')],
+  [Markup.button.callback('🖥 4 vCPU, 8 GB', 'size_s-4vcpu-8gb')],
+  [Markup.button.callback('🖥 4 vCPU, 16 GB', 'size_s-4vcpu-16gb')],
+  [Markup.button.callback('🖥 8 vCPU, 16 GB', 'size_s-8vcpu-16gb')],
+  [Markup.button.callback('🖥 10 vCPU, 32 GB', 'size_s-10vcpu-32gb')]
+]));
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle size selection
+bot.action(/size_.+/, (ctx) => {
+const size = ctx.match[0].split('_')[1];
+userSelections[ctx.from.id].size = size;
+const prices = {
+  's-1vcpu-1gb': 6,
+  's-2vcpu-2gb': 18,
+  's-4vcpu-8gb': 40,
+  's-8vcpu-16gb': 60,
+  's-8vcpu-16gb': 80,
+  's-10vcpu-32gb': 160
+};
+const price = prices[size];
+ctx.reply(`The price for the selected size is $${price} per month. Please choose the OS:`, Markup.inlineKeyboard([
+  [Markup.button.callback('Ubuntu 20.04', 'os_ubuntu-20-04-x64')],
+  [Markup.button.callback('CentOS 8', 'os_centos-8-x64')],
+  [Markup.button.callback('Debian 10', 'os_debian-10-x64')]
+]));
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle OS selection
+bot.action(/os_.+/, (ctx) => {
+const os = ctx.match[0].split('_')[1];
+userSelections[ctx.from.id].os = os;
+ctx.reply('Please choose the region:', Markup.inlineKeyboard([
+  [Markup.button.callback('New York 3 (🇺🇲)', 'region_nyc3')],
+  [Markup.button.callback('San Francisco 2 (🇺🇲)', 'region_sfo2')],
+  [Markup.button.callback('Amsterdam 3 (🇳🇱)', 'region_ams3')],
+  [Markup.button.callback('Singapore 1 (🇸🇬)', 'region_sgp1')],
+  [Markup.button.callback('London 1 (🇬🇧)', 'region_lon1')],
+  [Markup.button.callback('Frankfurt 1 (🇩🇪)', 'region_fra1')],
+  [Markup.button.callback('Toronto 1 (🇺🇲)', 'region_tor1')]
+]));
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle region selection
+bot.action(/region_.+/, (ctx) => {
+const region = ctx.match[0].split('_')[1];
+userSelections[ctx.from.id].region = region;
+ctx.reply('Please provide a name for the VM:');
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle VM name input
+bot.on('text', (ctx) => {
+if (!userSelections[ctx.from.id].name && userSelections[ctx.from.id].region) {
+  userSelections[ctx.from.id].name = ctx.message.text;
+  const { size, os, region, name } = userSelections[ctx.from.id];
+  const password = generateRandomPassword();
+  const data = {
+    name,
+    region,
+    size,
+    image: os,
+    ssh_keys: null,
+    backups: false,
+    ipv6: false,
+    user_data: `#cloud-config\npassword: ${password}\nchpasswd: { expire: False }\nssh_pwauth: True`
+  };
+
+  doRequest('post', '/droplets', data)
+    .then((response) => {
+      const droplet = response.data.droplet;
+      userSelections[ctx.from.id].droplet_id = droplet.id;
+      ctx.reply(`VM created with ID: ${droplet.id}. Waiting for IP address...`);
+      // Check for IP address
+      const checkIP = setInterval(() => {
+        doRequest('get', `/droplets/${droplet.id}`)
+          .then((res) => {
+            const dropletInfo = res.data.droplet;
+            if (dropletInfo.networks.v4.length > 0) {
+              clearInterval(checkIP);
+              const ip = dropletInfo.networks.v4[0].ip_address;
+              ctx.reply(`🖥 VM Details:\n🌐IP: ${ip}\n👤Username: root\n🔐Password: ${password}`);
+              delete userSelections[ctx.from.id];
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }, 5000); // check every 5 seconds
+    })
+    .catch((error) => {
+      ctx.reply('Error creating VM.');
+      console.error(error);
+      delete userSelections[ctx.from.id];
+    });
+}
+});
+
+const listVMs = (ctx) => {
+doRequest('get', '/droplets')
+  .then((response) => {
+    const droplets = response.data.droplets;
+    if (droplets.length === 0) {
+      return ctx.reply('No VMs found.');
+    }
+
+    const buttons = droplets.map((droplet) => {
+      return [Markup.button.callback(`${droplet.name} (${droplet.id})`, `vm_${droplet.id}`)];
+    });
+
+    ctx.reply('Select a VM to manage:', Markup.inlineKeyboard(buttons));
+  })
+  .catch((error) => {
+    ctx.reply('Error fetching VM list.');
+    console.error(error);
+  });
+};
+
+// Handle VM selection for management
+bot.action(/vm_.+/, (ctx) => {
+const vmId = ctx.match[0].split('_')[1];
+doRequest('get', `/droplets/${vmId}`)
+  .then((response) => {
+    const droplet = response.data.droplet;
+    const details = `🖥 ID: ${droplet.id}
+👤 Name: ${droplet.name}
+💾 Memory: ${droplet.memory} MB
+📦 vCPUs: ${droplet.vcpus}
+💿 Disk: ${droplet.disk} GB
+🚩 Region: ${droplet.region.name}
+📀 Image: ${droplet.image.distribution} ${droplet.image.name}
+✅ / ❌ Status: ${droplet.status}
+🌐 IP Address: ${droplet.networks.v4[0].ip_address}
+    `;
+ctx.reply(details, Markup.inlineKeyboard([
+  [Markup.button.callback('🔄 Reload', `reload_${vmId}`)],
+  [Markup.button.callback('⛔ Delete', `delete_${vmId}`)],
+  [Markup.button.callback('🔙Back', `back_to_list`)]
+]));
+  })
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle reload action
+bot.action(/reload_.+/, (ctx) => {
+const vmId = ctx.match[0].split('_')[1];
+const data = {
+  type: 'reboot',
+};
+
+doRequest('post', `/droplets/${vmId}/actions`, data)
+  .then(() => {
+    ctx.reply('VM reloaded.');
+  })
+  .catch((error) => {
+    ctx.reply('Error reloading VM.');
+    console.error(error);
+  });
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle delete action
+bot.action(/delete_.+/, (ctx) => {
+const vmId = ctx.match[0].split('_')[1];
+doRequest('delete', `/droplets/${vmId}`)
+  .then(() => {
+    ctx.reply('VM deleted.');
+    listVMs(ctx); // Refresh the list
+  })
+  .catch((error) => {
+    ctx.reply('Error deleting VM.');
+    console.error(error);
+  });
+ctx.deleteMessage(); // Delete previous message
+});
+
+// Handle back action
+bot.action('back_to_list', (ctx) => {
+listVMs(ctx);
+ctx.deleteMessage(); // Delete previous message
 });
 
 
