@@ -40,7 +40,7 @@ const doRequest = (method, endpoint, data = {}) => {
     method,
     url: `${digitalOceanApiUrl}${endpoint}`,
     headers: {
-      'Authorization': `Bearer ${digitalOceanToken}`,
+      'Authorization': `Bearer ${global.doapi}`,
       'Content-Type': 'application/json',
     },
     data,
