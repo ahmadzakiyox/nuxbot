@@ -2,22 +2,22 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 // TOKEN BOT TELEGRAM
-global.token = ["6136209053:AAE2nhENFUk9eLkXQp8X1Qg17XoDTMq1Lvo"]
+global.token = ["YOUR API BOT"]
 
 // BOTNAME
-global.botname = 'HLXEVO'
+global.botname = 'YOUR BOT NAME'
 
 // DIGITAL OCEAN API FOR CONTROLER
 global.doapi = 'YOUR DO API'
 
 //APIKEY XCODERS
-global.xcoders = 'MoPCbxiToSFepcB'
+global.xcoders = 'YOUR API XCODERS'
 
 //APIKET RSNCHAT 
-global.rsnchat = 'rsnai_w3Fdj3wh0SrRs118UsBkjSRN'
+global.rsnchat = 'YOUR API RSNCHAT'
 
 //MONGODBURL 
-global.MONGODB_URI = 'mongodb+srv://nuxysapi:lelang18@cluster0.cmvqrmm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+global.MONGODB_URI = 'YOUR MONGODB API'
 
 //OTHER 
 global.owner = 'ahmadzakiyo'
